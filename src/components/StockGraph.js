@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Get all local modules
 import jsonData from "./../jsonData.json";
-import React from 'react'
+import { dateAlphaNumShortMonthDate12HrMinTime } from "./../utils/date.utils";
 
 function StockGraph() {
 
@@ -21,7 +21,7 @@ function StockGraph() {
         <div className="custom-tooltip">
           <p className="label">Price: {payload[0].value}</p>
           <p className="intro">
-            At: {new Date(payload[0].payload["d"]).toLocaleString()}
+            At: {dateAlphaNumShortMonthDate12HrMinTime(payload[0].payload["d"])}
           </p>
         </div>
       );
