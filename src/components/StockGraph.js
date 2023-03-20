@@ -4,10 +4,19 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { useDispatch, useSelector } from "react-redux";
 
 // Get all local modules
-import jsonData from "./../jsonData.json";
 import { dateAlphaNumShortMonthDate12HrMinTime } from "./../utils/date.utils";
+import { stockPriceDataActions } from "./../store/stockData.slice";
 
 function StockGraph() {
+  // redux specific
+  const dispatch = useDispatch();
+  const { stockPriceData } = useSelector((state) => state.stockPriceData);
+
+  // dispatch action to make api call and load stock data in redux store
+
+  useEffect(() => {
+    dispatch(stockPriceDataActions.getStockPriceData());
+  }, []);
 
   const calenderViewButtonLabels = ["1G", "1H", "1A", "3A", "1Y", "5Y"];
   const [calendarView, setCalendarView] = useState(calenderViewButtonLabels[0]);
@@ -38,7 +47,7 @@ function StockGraph() {
     <>
       <ResponsiveContainer width={"100%"} height={300}>
         <LineChart
-          data={jsonData[calendarView]}
+          data={stockPriceData[calendarView]}
           margin={{
             top: 5,
             right: 30,
