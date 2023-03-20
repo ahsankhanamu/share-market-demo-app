@@ -12,3 +12,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button.ff-pill {
+  background-color: unset;
+  font-weight: 700;
+  border: none;
+  color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+button.ff-pill.active,
+button.ff-pill:active {
+  border-radius: 16px;
+  background-color: #00e091;
+  color: #ffffff;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}

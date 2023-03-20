@@ -11,6 +11,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+- The user can switch between the calendar views, which are `1G, 1H, 1A, 3A, 1Y, 5Y` by clicking on respective button.
 
 
 
